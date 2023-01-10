@@ -1,0 +1,14 @@
+* {
+  color:white;
+}
+
+.main-section {
+  background-color: purple;
+  text-align: center;
+  height: 100vh;
+  width: 50 vw
+}
+
+.game-counter {
+  background-color: #CF9FFF;
+}
