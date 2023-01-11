@@ -1,11 +1,14 @@
 class Game {
-  constructor(player) {
-    this.user = player.name
-    this.token = player.token
-    this.wins = player.wins
+  constructor() {
+    this.classicBoard = [rock, paper, scissors]
+    this.difficultBoard = [rock, paper, scissors, lizard, alien]
   }
 
-//counter to track the data for the game board
+
+
+
+
+//to track the data for the game board
 
 // way to see which game is selected
 
