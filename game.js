@@ -19,6 +19,9 @@ class Game {
     }
   }
 
+//[‘alien’, ‘paper’].includes(userChoice);
+//userChoice === ‘paper’ || userChoice === “alien”
+
   //way to check game board for win conditions and detect a tie
 checkForWinner () {
 
@@ -27,15 +30,15 @@ var computerChoice = this.computer.takeTurn('computer', this.type)
 
   if (userChoice === computerChoice) {
     return this.scoreCounter('draw')
-  } else if (computerChoice === '📄' && (userChoice === '✄' || '🦎' )) {
+  } else if (computerChoice === '📄' && (userChoice === '✄' || userChoice === '🦎' )) {
     return this.scoreCounter('user')
-  } else if (computerChoice === '🪨' && (userChoice === '📄' || '👽')) {
+  } else if (computerChoice === '🪨' && (userChoice === '📄' || userChoice === '👽')) {
     return this.scoreCounter('user')
-  } else if (computerChoice === '✄' && (userChoice === '🪨' || '👽')) {
+  } else if (computerChoice === '✄' && (userChoice === '🪨' || userChoice === '👽')) {
     return this.scoreCounter('user')
-  } else if (computerChoice === '👽' && (userChoice === '📄' || '🦎')) {
+  } else if (computerChoice === '👽' && (userChoice === '📄' || userChoice === '🦎')) {
     return this.scoreCounter('user')
-  } else if (computerChoice === '🦎' && (userChoice === '🪨' || '✄')) {
+  } else if (computerChoice === '🦎' && (userChoice === '🪨' || userChoice === '✄')) {
     return this.scoreCounter('user')
   }
     else {
