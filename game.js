@@ -12,31 +12,40 @@ class Game {
   chooseGame() {
     if(this.type === 'classic') {
       //display rock/paper/scissors
-      return ('📄' , '🪨' , '✄')
+      return ('📄' , '🪨' , '✄') // where is this going?
     } else {
       //display rock/paper/scissors/alien/lizard
       return ('📄' , '🪨' , '✄' , '👽' , '🦎')
     }
   }
 
-checkForWinner (userChoice, computerChoice) {
+  //way to check game board for win conditions and detect a tie
+checkForWinner () {
+
+var userChoice = this.player.takeTurn('human', this.type)
+var computerChoice = this.computer.takeTurn('computer', this.type)  
+
   if (userChoice === computerChoice) {
     return this.scoreCounter('draw')
   } else if (computerChoice === '📄' && (userChoice === '✄' || '🦎' )) {
     return this.scoreCounter('user')
-  } else if (computerChoice === '🪨' && (userChoice === '📄', '👽')) {
+  } else if (computerChoice === '🪨' && (userChoice === '📄' || '👽')) {
     return this.scoreCounter('user')
-  } else if (computerChoice === '✄' && (userChoice === '🪨', '👽')) {
+  } else if (computerChoice === '✄' && (userChoice === '🪨' || '👽')) {
     return this.scoreCounter('user')
-  } else if (computerChoice === '👽' && (userChoice === '📄', '🦎')) {
+  } else if (computerChoice === '👽' && (userChoice === '📄' || '🦎')) {
     return this.scoreCounter('user')
-  } else {
+  } else if (computerChoice === '🦎' && (userChoice === '🪨' || '✄')) {
+    return this.scoreCounter('user')
+  }
+    else {
     return this.scoreCounter('computer')
   }
 }
 
+
 scoreCounter(whoWon) {
-  if whoWon === 'draw' {
+  if (whoWon === 'draw') {
     return 'It was a draw, battle again!'
   } else if (whoWon === 'computer') {
     this.computer.wins += 1
@@ -47,21 +56,16 @@ scoreCounter(whoWon) {
   }
 }
 
+// //way to reset the games board to begin a new game *function gameReset
+// gameReset() {
+//   //bring back to main page
+//   //reset counter
+//   }
 
 
 
 
-
-//way to reset the games board to begin a new game *function gameReset
-gameReset() {
-  //bring back to main page
-  //reset counter
-  }
-
-
-
-
-setTimeout(function to run after timer ends, 2000) // -> call after each choice
+// setTimeout(function to run after timer ends, 2000) // -> call after each choice
 
 
 
