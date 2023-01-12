@@ -19,10 +19,20 @@ class Game {
     }
   }
 
-checkForWinner () {
-  if (this.player === this.computer) {
+checkForWinner (userChoice, computerChoice) {
+  if (userChoice === computerChoice) {
     return this.scoreCounter('draw')
-  } else if ()
+  } else if (computerChoice === '📄' && (userChoice === '✄' || '🦎' )) {
+    return this.scoreCounter('user')
+  } else if (computerChoice === '🪨' && (userChoice === '📄', '👽')) {
+    return this.scoreCounter('user')
+  } else if (computerChoice === '✄' && (userChoice === '🪨', '👽')) {
+    return this.scoreCounter('user')
+  } else if (computerChoice === '👽' && (userChoice === '📄', '🦎')) {
+    return this.scoreCounter('user')
+  } else {
+    return this.scoreCounter('computer')
+  }
 }
 
 scoreCounter(whoWon) {
