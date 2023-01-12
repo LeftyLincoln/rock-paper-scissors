@@ -1,19 +1,84 @@
 class Game {
-  constructor(player) {
-    this.user = player.name
-    this.token = player.token
-    this.wins = player.wins
+  constructor(gameType) {
+    // this.classicBoard = [rock, paper, scissors]
+    // this.difficultBoard = [rock, paper, scissors, lizard, alien]
+    this.player = new Player('Human', '🧙‍♂️')
+    this.computer = new Player('Computer', '💻')
+    this.type = gameType
   }
 
-//counter to track the data for the game board
+  //to track the data for the game board
+  // way to see which game is selected
+  chooseGame() {
+    if(this.type === 'classic') {
+      //display rock/paper/scissors
+      return ('📄' , '🪨' , '✄') // where is this going?
+    } else {
+      //display rock/paper/scissors/alien/lizard
+      return ('📄' , '🪨' , '✄' , '👽' , '🦎')
+    }
+  }
 
-// way to see which game is selected
+//[‘alien’, ‘paper’].includes(userChoice);
+//userChoice === ‘paper’ || userChoice === “alien”
 
-//way to see if someone has one
-//if (this.wins === 5) then display who won and reset
+  //way to check game board for win conditions and detect a tie
+checkForWinner () {
 
-//way to see if neither person wins => if choice === choice pause and then choose again
+var userChoice = this.player.takeTurn('human', this.type)
+var computerChoice = this.computer.takeTurn('computer', this.type)  
 
-//way to reset the games board to begin a new game
+  if (userChoice === computerChoice) {
+    return this.scoreCounter('draw')
+  } else if (computerChoice === '📄' && (userChoice === '✄' || userChoice === '🦎' )) {
+    return this.scoreCounter('user')
+  } else if (computerChoice === '🪨' && (userChoice === '📄' || userChoice === '👽')) {
+    return this.scoreCounter('user')
+  } else if (computerChoice === '✄' && (userChoice === '🪨' || userChoice === '👽')) {
+    return this.scoreCounter('user')
+  } else if (computerChoice === '👽' && (userChoice === '📄' || userChoice === '🦎')) {
+    return this.scoreCounter('user')
+  } else if (computerChoice === '🦎' && (userChoice === '🪨' || userChoice === '✄')) {
+    return this.scoreCounter('user')
+  }
+    else {
+    return this.scoreCounter('computer')
+  }
+}
+
+
+scoreCounter(whoWon) {
+  if (whoWon === 'draw') {
+    return 'It was a draw, battle again!'
+  } else if (whoWon === 'computer') {
+    this.computer.wins += 1
+    return 'The computer won this round!'
+  } else {
+    this.player.wins += 1
+    return 'User won this round!'
+  }
+}
+
+// //way to reset the games board to begin a new game *function gameReset
+// gameReset() {
+//   //bring back to main page
+//   //reset counter
+//   }
+
+
+
+
+// setTimeout(function to run after timer ends, 2000) // -> call after each choice
+
+
+
+
+
+
+
+
+
+
+
 
 }
