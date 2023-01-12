@@ -1,12 +1,20 @@
 
 class Player {
-  constructor(user, token, wins) {
+  constructor(user, token) {
     this.name = user
     this.token = token
     this.wins = wins
   }
 
-  takeTurn() {
-    
+  takeTurn(userChoice) {
+     if (userChoice) {
+
+     } 
   }
+
+
+  randomGenerator() {
+
+  }
+
 }

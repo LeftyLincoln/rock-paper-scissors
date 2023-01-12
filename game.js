@@ -1,34 +1,44 @@
 class Game {
-  constructor() {
-    this.classicBoard = [rock, paper, scissors]
-    this.difficultBoard = [rock, paper, scissors, lizard, alien]
-    this.player1 = new Player(user, token, wins)
-    this.player2 = new Player(user, token, wins)
+  constructor(gameType) {
+    // this.classicBoard = [rock, paper, scissors]
+    // this.difficultBoard = [rock, paper, scissors, lizard, alien]
+    this.player1 = new Player('Human', 🧙‍♂️)
+    this.computer = new Player('Computer', 💻)
+    this.type = gameType
   }
 
   //to track the data for the game board
   // way to see which game is selected
   chooseGame() {
-    if(this.classicBoard) {
-      console.log(this.classicBoard) //display rock paper scissors 
+    if(this.type === 'classic') {
+      //display rock/paper/scissors
+      return ('📄' , '🪨' , '✄')
     } else {
-      console.log(this.difficultBoard)  //display rock paper, scissors, lizard, alien
+      //display rock/paper/scissors/alien/lizard
+      return ('📄' , '🪨' , '✄' , '👽' , '🦎')
     }
   }
 
+checkForWinner (userChoice, botChoice) {
+  if (userChoice === botChoice) {
+    return this.updateScore('draw')
+  }
+}
 
-checkForWinner () {
-  if (this.wins === 3) {
-    //display overall winner
-    //then pause game
-    //reset game function
+scoreCounter(whoWon) {
+  if whoWon === 'draw' {
+    return 'It was a draw, battle again!'
+  } else if (whoWon === 'computer') {
+    this.computer.wins += 1
+    return 'The computer won this round!'
+  } else {
+    this.player.wins += 1
+    return 'User won this round!'
   }
 }
 
 
-checkForTie () {
-//way to see if neither person wins => if choice === choice pause and then choose again
-}
+
 
 
 
