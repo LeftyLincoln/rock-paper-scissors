@@ -3,11 +3,15 @@ class Player {
   constructor(user, token) {
     this.name = user
     this.token = token
-    this.wins = wins
+    this.wins = 0
+    this.choice = choice
+    
+
+    
   }
 
-  takeTurn(userChoice) {
-     if (userChoice) {
+  takeTurn(choice) {
+     if (choice) {
 
      } 
   }
@@ -17,4 +21,9 @@ class Player {
 
   }
 
+}
+
+
+function getRandomIndex(array) {
+  return Math.floor(Math.random() * array.length);
 }

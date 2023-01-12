@@ -2,8 +2,8 @@ class Game {
   constructor(gameType) {
     // this.classicBoard = [rock, paper, scissors]
     // this.difficultBoard = [rock, paper, scissors, lizard, alien]
-    this.player1 = new Player('Human', 🧙‍♂️)
-    this.computer = new Player('Computer', 💻)
+    this.player = new Player('Human', '🧙‍♂️')
+    this.computer = new Player('Computer', '💻')
     this.type = gameType
   }
 
@@ -19,10 +19,10 @@ class Game {
     }
   }
 
-checkForWinner (userChoice, botChoice) {
-  if (userChoice === botChoice) {
-    return this.updateScore('draw')
-  }
+checkForWinner () {
+  if (this.player === this.computer) {
+    return this.scoreCounter('draw')
+  } else if ()
 }
 
 scoreCounter(whoWon) {
@@ -56,9 +56,6 @@ setTimeout(function to run after timer ends, 2000) // -> call after each choice
 
 
 
-function getRandomIndex(array) {
-  return Math.floor(Math.random() * array.length);
-}
 
 
 
