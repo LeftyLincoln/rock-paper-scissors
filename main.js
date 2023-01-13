@@ -1,22 +1,19 @@
-//
+// Global Variables
 var game = new Game()
 
-
-
 //DOM Variables
-userSection = document.getElementById('userSection')
-userCounter = document.getElementById('userCounter')
-changeGameButton = document.getElementById('changeGameButton')
-beforeGameHeader = document.getElementById('beforeGameHeader')
-duringGameHeader = document.getElementById('duringGameHeader')
-bothRules = document.getElementById('bothRules')
-classicSection = document.getElementById('classic')
-difficultSection = document.getElementById('difficult')
-computerSection = document.getElementById('computerSection')
-computerCounter = document.getElementById('computerCounter')
-fightSection = document.getElementById('fightSection')
-fighterIcons = document.querySelectorAll('.fighter-icons')
-
+var userSection = document.getElementById('userSection')
+var userCounter = document.getElementById('userCounter')
+var changeGameButton = document.getElementById('changeGameButton')
+var beforeGameHeader = document.getElementById('beforeGameHeader')
+var duringGameHeader = document.getElementById('duringGameHeader')
+var bothRules = document.getElementById('bothRules')
+var classicSection = document.getElementById('classic')
+var difficultSection = document.getElementById('difficult')
+var computerSection = document.getElementById('computerSection')
+var computerCounter = document.getElementById('computerCounter')
+var fightSection = document.getElementById('fightSection')
+var fighterIcons = document.querySelectorAll('.fighter-icons')
 
 //Event Listeners
 classicSection.addEventListener('click', loadClassicGame)
@@ -49,15 +46,12 @@ function loadDifficultGame(event) {
 }
 
 function chooseFighter(event) {
-  console.log(event.target.id)
   var fighter = event.target.id  
   game.player.takeTurn(fighter)
   game.computerFighter()
   game.checkForWinner(game.player.fighter, game.computer.fighter)
   displayFighters(game.player, game.computer)
-  
-
-  //set time out and function to reset gameboard
+  // setTimeout(resetBoard(), 5000) 
 }
 
 function changeGame() {
@@ -79,16 +73,11 @@ function displayFighters(userChoice, computerChoice) {
   var computerFighter = document.getElementById(computerChoice.fighter)
 
   for (var i = 0; i < fighterIcons.length; i++) {
-    console.log(fighterIcons[i]);
     hide(fighterIcons[i])
-  
   } 
   show(playerFighter)
-  show(computerFighter)
-  
+  show(computerFighter)  
 }
-
-
 
 function hide(element) {
   element.classList.add('hidden')
@@ -98,14 +87,12 @@ function show(element) {
   element.classList.remove('hidden')
 }
 
-
 function classicFighters() {
   fightSection.innerHTML = 
     `<img class="fighter-icons" id="📄"src= "assets/happy-paper.png" alt="Piece of paper">
      <img class="fighter-icons" id="🪨"src= "assets/happy-rocks.png" alt="Happy rocks">
      <img class="fighter-icons" id="✄"src= "assets/lines-scissors.png" alt="Pair of scissors">`
 }
-
 
 function difficultFighters() {
   fightSection.innerHTML = 
@@ -116,15 +103,9 @@ function difficultFighters() {
      <img class="fighter-icons" id="👽"src= "assets/ufo.png" alt="Picture of alien">`
 }
 
-function gameResetClassic() {
-  setTimeout(loadClassicGame(), 2000)
+function resetBoard() {
+  var fighterIcons = document.querySelectorAll('.fighter-icons')
+  for (var i = 0; i < fighterIcons.length; i++) {
+    show(fighterIcons[i])
+  }
 }
-
-function gameResetDifficult() {
-  setTimeout(loadDifficultGame(), 2000)
-}
-
-
-
-
-

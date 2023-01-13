@@ -16,74 +16,45 @@ class Game {
       }
   }
 
-checkForWinner(userChoice, computerChoice) {
-// var userChoice = this.player.takeTurn(this.fighters)
-// var computerChoice = this.computer.takeTurn(this.fighters)  
-
-  if (userChoice === computerChoice) {
-    return this.scoreCounter('draw')
-  } else if (computerChoice === '📄' && (userChoice === '✄' || userChoice === '🦎' )) {
-    return this.scoreCounter('user')
-  } else if (computerChoice === '🪨' && (userChoice === '📄' || userChoice === '👽')) {
-    return this.scoreCounter('user')
-  } else if (computerChoice === '✄' && (userChoice === '🪨' || userChoice === '👽')) {
-    return this.scoreCounter('user')
-  } else if (computerChoice === '👽' && (userChoice === '📄' || userChoice === '🦎')) {
-    return this.scoreCounter('user')
-  } else if (computerChoice === '🦎' && (userChoice === '🪨' || userChoice === '✄')) {
-    return this.scoreCounter('user')
+  checkForWinner(userChoice, computerChoice) {
+    if (userChoice === computerChoice) {
+      return this.scoreCounter('draw')
+    } else if (computerChoice === '📄' && (userChoice === '✄' || userChoice === '🦎' )) {
+      return this.scoreCounter('user')
+    } else if (computerChoice === '🪨' && (userChoice === '📄' || userChoice === '👽')) {
+      return this.scoreCounter('user')
+    } else if (computerChoice === '✄' && (userChoice === '🪨' || userChoice === '👽')) {
+      return this.scoreCounter('user')
+    } else if (computerChoice === '👽' && (userChoice === '📄' || userChoice === '🦎')) {
+      return this.scoreCounter('user')
+    } else if (computerChoice === '🦎' && (userChoice === '🪨' || userChoice === '✄')) {
+      return this.scoreCounter('user')
+    } else {
+      return this.scoreCounter('computer')
+    }
   }
-    else {
-    return this.scoreCounter('computer')
+
+  scoreCounter(whoWon) {
+    if (whoWon === 'draw') {
+      duringGameHeader.innerText = 'It was a draw, battle again!'
+    } else if (whoWon === 'computer') {
+      this.computer.wins += 1
+      computerCounter.innerText = `Wins: ${this.computer.wins}`
+      duringGameHeader.innerText =  'The computer won this round!'
+    } else {
+      this.player.wins += 1
+      userCounter.innerText = `Wins: ${this.player.wins}`
+      duringGameHeader.innerText =  'User won this round!'
+    }
   }
-}
 
-scoreCounter(whoWon) {
-  if (whoWon === 'draw') {
-    duringGameHeader.innerText = 'It was a draw, battle again!'
-  } else if (whoWon === 'computer') {
-    this.computer.wins += 1
-    computerCounter.innerText = `Wins: ${this.computer.wins}`
-    duringGameHeader.innerText =  'The computer won this round!'
-  } else {
-    this.player.wins += 1
-    userCounter.innerText = `Wins: ${this.player.wins}`
-    duringGameHeader.innerText =  'User won this round!'
+  computerFighter() {
+    var computerTurn = this.getRandomIndex(this.fighters)
+    this.computer.takeTurn(computerTurn)
+    return this.computer.fighter 
   }
-}
 
-
-computerFighter() {
-  var computerTurn = this.getRandomIndex(this.fighters)
-  this.computer.takeTurn(computerTurn)
-  return this.computer.fighter 
-}
-
-getRandomIndex(array) {
-  return array[Math.floor(Math.random() * array.length)];
-}
-
-
-
-
-// randomGenerator(gameType) {
-//   // var difficultOptions = ['🪨' , '📄', '✄', '👽', '🦎']
-//   // var classicOptions =  ['🪨' , '📄', '✄']
-
-
-//     this.getRandomIndex(this.fighters)
-//   } else if (gameType === 'difficult') { 
-//     return difficultOptions[this.getRandomIndex(difficultOptions)]
-//   }
-// }
-
-
-
-
-
-
-
-
-
-
+  getRandomIndex(array) {
+    return array[Math.floor(Math.random() * array.length)];
+  }
 }
