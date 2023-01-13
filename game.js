@@ -1,30 +1,19 @@
 class Game {
   constructor(gameType) {
-    // this.classicBoard = [rock, paper, scissors]
-    // this.difficultBoard = [rock, paper, scissors, lizard, alien]
     this.player = new Player('Human', '🧙‍♂️')
     this.computer = new Player('Computer', '💻')
     this.type = gameType
   }
 
-  //to track the data for the game board
-  // way to see which game is selected
   chooseGame() {
     if(this.type === 'classic') {
-      //display rock/paper/scissors
-      return ('📄' , '🪨' , '✄') // where is this going?
+      return ('📄' , '🪨' , '✄') 
     } else {
-      //display rock/paper/scissors/alien/lizard
       return ('📄' , '🪨' , '✄' , '👽' , '🦎')
     }
   }
 
-//[‘alien’, ‘paper’].includes(userChoice);
-//userChoice === ‘paper’ || userChoice === “alien”
-
-  //way to check game board for win conditions and detect a tie
 checkForWinner () {
-
 var userChoice = this.player.takeTurn('human', this.type)
 var computerChoice = this.computer.takeTurn('computer', this.type)  
 
@@ -46,15 +35,16 @@ var computerChoice = this.computer.takeTurn('computer', this.type)
   }
 }
 
-
 scoreCounter(whoWon) {
   if (whoWon === 'draw') {
     return 'It was a draw, battle again!'
   } else if (whoWon === 'computer') {
     this.computer.wins += 1
+    computerCounter.innerText = `Wins: ${this.computer.wins}`
     return 'The computer won this round!'
   } else {
     this.player.wins += 1
+    userCounter.innerText = `Wins: ${this.player.wins}`
     return 'User won this round!'
   }
 }

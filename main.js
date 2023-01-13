@@ -2,13 +2,13 @@
 var game = new Game()
 
 
-var displayAsset = {
-  '📄' : './assets/happy-paper.png',
-  '🪨' : './assets/happy-rocks.png',
-  '✄' : './assets/lines-scissors.png',
-  '🦎': './assets/lizard.png',
-  '👽' : './assets/ufo.png'
-}
+// var displayAsset = {
+//   '📄' : './assets/happy-paper.png',
+//   '🪨' : './assets/happy-rocks.png',
+//   '✄' : './assets/lines-scissors.png',
+//   '🦎': './assets/lizard.png',
+//   '👽' : './assets/ufo.png'
+// }
 
 
 //DOM Variables
@@ -34,11 +34,9 @@ fightSection.addEventListener('click', function(event) {chooseFighter(event)})
 //Event Handlers
 
 function chooseFighter(event) {
-console.log(event.target)  
+console.log(event.target.id)  
 game.checkForWinner()
-setTimeout(loadClassicGame, 2000)
-
-
+setTimeout(2000)
 }
 
 function loadClassicGame() {
@@ -97,9 +95,9 @@ function show(element) {
 
 function classicFighters() {
   fightSection.innerHTML = 
-    `<img src= "assets/happy-paper.png" alt="Piece of paper">
-     <img src= "assets/happy-rocks.png" alt="Happy rocks">
-     <img src= "assets/lines-scissors.png" alt="Pair of scissors">`
+    `<img id="📄"src= "assets/happy-paper.png" alt="Piece of paper">
+     <img id="🪨"src= "assets/happy-rocks.png" alt="Happy rocks">
+     <img id="✄"src= "assets/lines-scissors.png" alt="Pair of scissors">`
 }
 
 
@@ -109,7 +107,7 @@ function difficultFighters() {
      <img id="🪨"src= "assets/happy-rocks.png" alt="Happy rocks">
      <img id="✄"src= "assets/lines-scissors.png" alt="Pair of scissors">
      <img id="🦎"src= "assets/lizard.png" alt="Picture of lizard">
-     <img id=👽""src= "assets/ufo.png" alt="Picture of alien">`
+     <img id="👽"src= "assets/ufo.png" alt="Picture of alien">`
 }
 
 
