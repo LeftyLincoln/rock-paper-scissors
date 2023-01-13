@@ -2,13 +2,7 @@
 var game = new Game()
 
 
-// var displayAsset = {
-//   '📄' : './assets/happy-paper.png',
-//   '🪨' : './assets/happy-rocks.png',
-//   '✄' : './assets/lines-scissors.png',
-//   '🦎': './assets/lizard.png',
-//   '👽' : './assets/ufo.png'
-// }
+
 
 
 //DOM Variables
@@ -34,13 +28,17 @@ fightSection.addEventListener('click', function(event) {chooseFighter(event)})
 //Event Handlers
 
 function chooseFighter(event) {
-console.log(event.target.id)  
-game.checkForWinner()
-setTimeout(2000)
+console.log(event.target.id)
+var fighter = event.target.id  
+game.player.takeTurn(fighter)
+game.computerFighter()
+game.checkForWinner(game.player.fighter, game.computer.fighter)
+
+
 }
 
-function loadClassicGame() {
-game.chooseGame()
+function loadClassicGame(event) {
+game.chooseGame(event)
 hide(classic)
 hide(difficult)
 hide(beforeGameHeader)
@@ -50,8 +48,8 @@ classicFighters()
 show(fightSection)
 }
 
-function loadDifficultGame() {
-game.chooseGame()  
+function loadDifficultGame(event) {
+game.chooseGame(event)  
 hide(classic)
 hide(difficult)
 show(changeGameButton)
