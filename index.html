@@ -11,8 +11,8 @@
   <aside class="user-section">
     <p class="user-token">🧙‍♂️</p>
     <h3>User Magician</h3>
-    <div class="counter">Wins: 0</div>
-    <button class="change-game-button">Change Game?</button>
+    <div class="counter" id="userCounter">Wins: 0</div>
+    <button class="change-game-button">Change Game ?</button>
   </aside>
   <main>
     <section class="main-section">
@@ -36,11 +36,13 @@
       </div>
       </section>
     </section>
+    <section class="fight-section hidden" id="fightSection">  
+    </section>
   </main> 
   <aside class="computer-section">
     <p class="computer-token">💻</p>
     <h3>Computer Bot</h3>
-    <div class="counter">Wins: 0</div>
+    <div class="counter" id="computerCounter">Wins: 0</div>
   </aside>
   <script type="text/javascript" src="player.js"></script>  
   <script type="text/javascript" src="game.js"></script>
