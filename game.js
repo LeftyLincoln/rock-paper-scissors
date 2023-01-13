@@ -7,14 +7,13 @@ class Game {
   }
 
   chooseGame(event) {
-    // console.log(event.target.id);
     if(event.target.closest('#classic')) {
       this.type = 'classic'
       this.fighters = ['📄' , '🪨' , '✄'] 
     } else {
-      this.type = 'difficult'
-       this.fighters = ['📄' , '🪨' , '✄' , '👽' , '🦎']
-    }
+        this.type = 'difficult'
+        this.fighters = ['📄' , '🪨' , '✄' , '👽' , '🦎']
+      }
   }
 
 checkForWinner(userChoice, computerChoice) {
@@ -41,15 +40,15 @@ checkForWinner(userChoice, computerChoice) {
 
 scoreCounter(whoWon) {
   if (whoWon === 'draw') {
-    return 'It was a draw, battle again!'
+    duringGameHeader.innerText = 'It was a draw, battle again!'
   } else if (whoWon === 'computer') {
     this.computer.wins += 1
     computerCounter.innerText = `Wins: ${this.computer.wins}`
-    return 'The computer won this round!'
+    duringGameHeader.innerText =  'The computer won this round!'
   } else {
     this.player.wins += 1
     userCounter.innerText = `Wins: ${this.player.wins}`
-    return 'User won this round!'
+    duringGameHeader.innerText =  'User won this round!'
   }
 }
 
@@ -57,7 +56,7 @@ scoreCounter(whoWon) {
 computerFighter() {
   var computerTurn = this.getRandomIndex(this.fighters)
   this.computer.takeTurn(computerTurn)
-  return this.computer.choice 
+  return this.computer.fighter 
 }
 
 getRandomIndex(array) {
