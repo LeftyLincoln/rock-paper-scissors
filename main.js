@@ -1,4 +1,6 @@
-//Global Variables
+//
+var game = new Game()
+
 
 var displayAsset = {
   '📄' : './assets/happy-paper.png',
@@ -26,11 +28,21 @@ fightSection = document.getElementById('fightSection')
 classicSection.addEventListener('click', loadClassicGame)
 difficultSection.addEventListener('click', loadDifficultGame)
 changeGameButton.addEventListener('click', changeGame)
+fightSection.addEventListener('click', function(event) {chooseFighter(event)})
+
 
 //Event Handlers
 
-function loadClassicGame() {
+function chooseFighter(event) {
+console.log(event.target)  
+game.checkForWinner()
+setTimeout(loadClassicGame, 2000)
 
+
+}
+
+function loadClassicGame() {
+game.chooseGame()
 hide(classic)
 hide(difficult)
 hide(beforeGameHeader)
@@ -41,6 +53,7 @@ show(fightSection)
 }
 
 function loadDifficultGame() {
+game.chooseGame()  
 hide(classic)
 hide(difficult)
 show(changeGameButton)
@@ -60,6 +73,15 @@ hide(fightSection)
 }
 
 
+function gameResetClassic() {
+setTimeout(loadClassicGame(), 2000)
+
+}
+
+function gameResetDifficult() {
+  setTimeout(loadDifficultGame(), 2000)
+  
+  }
 
 
 
@@ -83,13 +105,13 @@ function classicFighters() {
 
 function difficultFighters() {
   fightSection.innerHTML = 
-    `<img src= "assets/happy-paper.png" alt="Piece of paper">
-     <img src= "assets/happy-rocks.png" alt="Happy rocks">
-     <img src= "assets/lines-scissors.png" alt="Pair of scissors">
-     <img src= "assets/lizard.png" alt="Picture of lizard">
-     <img src= "assets/ufo.png" alt="Picture of alien">`
+    `<img id="📄" src= "assets/happy-paper.png" alt="Piece of paper">
+     <img id="🪨"src= "assets/happy-rocks.png" alt="Happy rocks">
+     <img id="✄"src= "assets/lines-scissors.png" alt="Pair of scissors">
+     <img id="🦎"src= "assets/lizard.png" alt="Picture of lizard">
+     <img id=👽""src= "assets/ufo.png" alt="Picture of alien">`
 }
 
 
 
-
+// setTimeout(function to run after timer ends, 2000) // -> call after each choice

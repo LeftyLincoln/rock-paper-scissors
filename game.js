@@ -59,16 +59,14 @@ scoreCounter(whoWon) {
   }
 }
 
-// //way to reset the games board to begin a new game *function gameReset
-// gameReset() {
-//   //bring back to main page
-//   //reset counter
-//   }
 
 
 
 
-// setTimeout(function to run after timer ends, 2000) // -> call after each choice
+
+
+
+
 
 
 
