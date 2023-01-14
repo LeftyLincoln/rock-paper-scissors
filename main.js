@@ -6,7 +6,7 @@ var userSection = document.getElementById('userSection')
 var userCounter = document.getElementById('userCounter')
 var changeGameButton = document.getElementById('changeGameButton')
 var beforeGameHeader = document.getElementById('beforeGameHeader')
-var duringGameHeader = document.getElementById('duringGameHeader')
+var duringGameHeader = document.querySelector('.during-game-header')
 var bothRules = document.getElementById('bothRules')
 var classicSection = document.getElementById('classic')
 var difficultSection = document.getElementById('difficult')
@@ -29,7 +29,7 @@ function loadClassicGame(event) {
   hide(difficult)
   hide(beforeGameHeader)
   show(changeGameButton)
-  show(duringGameHeader)
+  show(duringGameHeader) 
   classicFighters()
   show(fightSection)
   }
@@ -40,7 +40,7 @@ function loadDifficultGame(event) {
   hide(difficult)
   show(changeGameButton)
   hide(beforeGameHeader)
-  show(duringGameHeader)
+  show(duringGameHeader) 
   difficultFighters()
   show(fightSection)
 }
@@ -52,8 +52,7 @@ function chooseFighter(event) {
   game.checkForWinner(game.player.fighter, game.computer.fighter)
   displayFighters(game.player, game.computer)
   setTimeout(resetBoard, 2000)
-  show(duringGameHeader) //ive changed this based on who wins
-  
+  show(duringGameHeader) 
 }
 
 function changeGame() {
@@ -110,4 +109,5 @@ function resetBoard() {
   for (var i = 0; i < fighterIcons.length; i++) {
     show(fighterIcons[i])
   }
+  duringGameHeader.innerText = 'Choose your fighter!'
 }
