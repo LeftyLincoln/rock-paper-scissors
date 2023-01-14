@@ -21,7 +21,6 @@ difficultSection.addEventListener('click', loadDifficultGame)
 changeGameButton.addEventListener('click', changeGame)
 fightSection.addEventListener('click', function(event) {chooseFighter(event)})
 
-
 //Event Handlers
 function loadClassicGame(event) {
   game.chooseGame(event)
@@ -64,10 +63,7 @@ function changeGame() {
   hide(fightSection)
 }
 
-
-
 //Functions
-
 function displayFighters(userChoice, computerChoice) {
   var fighterIcons = document.querySelectorAll('.fighter-icons')
   var playerFighter = document.getElementById(userChoice.fighter)
