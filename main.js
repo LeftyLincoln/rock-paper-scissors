@@ -51,7 +51,9 @@ function chooseFighter(event) {
   game.computerFighter()
   game.checkForWinner(game.player.fighter, game.computer.fighter)
   displayFighters(game.player, game.computer)
-  // setTimeout(resetBoard(), 5000) 
+  setTimeout(resetBoard, 2000)
+  show(duringGameHeader) //ive changed this based on who wins
+  
 }
 
 function changeGame() {
