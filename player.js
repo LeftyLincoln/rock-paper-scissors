@@ -4,31 +4,24 @@ class Player {
     this.name = user
     this.token = token
     this.wins = 0
+    this.fighter = undefined
     
   }
 
-  takeTurn(player, gameType) {
-    if (player === 'human') {
-      return '📄'
-    } else {
-      return this.randomGenerator(gameType)
-    }
+  takeTurn(userChoice) {
+    this.fighter = userChoice
   }
 
 
-  randomGenerator(gameType) {
-    var difficultOptions = ['🪨' , '📄', '✄', '👽', '🦎']
-    var classicOptions =  ['🪨' , '📄', '✄']
+  // takeTurn(player, gameType) {
+  //   if (player === 'human') {
+  //     return '📄'
+  //   } else {
+  //     return this.randomGenerator(gameType)
+  //   }
+  // }
 
-    if (gameType === 'classic') {
-      return classicOptions[this.getRandomIndex(classicOptions)]
-    } else if (gameType === 'difficult') { 
-      return difficultOptions[this.getRandomIndex(difficultOptions)]
-    }
-  }
 
-    getRandomIndex(array) {
-    return Math.floor(Math.random() * array.length);
-  }
+
 
 }
