@@ -1,7 +1,5 @@
-// Global Variables
 var game = new Game()
 
-//DOM Variables
 var userSection = document.getElementById('userSection')
 var userCounter = document.getElementById('userCounter')
 var changeGameButton = document.getElementById('changeGameButton')
@@ -15,13 +13,11 @@ var computerCounter = document.getElementById('computerCounter')
 var fightSection = document.getElementById('fightSection')
 var fighterIcons = document.querySelectorAll('.fighter-icons')
 
-//Event Listeners
 classicSection.addEventListener('click', loadClassicGame)
 difficultSection.addEventListener('click', loadDifficultGame)
 changeGameButton.addEventListener('click', changeGame)
 fightSection.addEventListener('click', function(event) {chooseFighter(event)})
 
-//Event Handlers
 function loadClassicGame(event) {
   game.chooseGame(event)
   hide(classic)
@@ -63,7 +59,6 @@ function changeGame() {
   hide(fightSection)
 }
 
-//Functions
 function displayFighters(userChoice, computerChoice) {
   var fighterIcons = document.querySelectorAll('.fighter-icons')
   var playerFighter = document.getElementById(userChoice.fighter)
