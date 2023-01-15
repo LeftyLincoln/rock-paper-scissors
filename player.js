@@ -3,7 +3,7 @@ class Player {
     this.name = user
     this.token = token
     this.wins = 0
-    this.fighter = undefined 
+    this.fighter 
   }
 
   takeTurn(userChoice) {
