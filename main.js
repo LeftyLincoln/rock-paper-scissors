@@ -16,7 +16,7 @@ var fighterIcons = document.querySelectorAll('.fighter-icons')
 classicSection.addEventListener('click', loadClassicGame)
 difficultSection.addEventListener('click', loadDifficultGame)
 changeGameButton.addEventListener('click', changeGame)
-fightSection.addEventListener('click', function(event) {chooseFighter(event)})
+fightSection.addEventListener('click', chooseFighter)
 
 function loadClassicGame(event) {
   game.chooseGame(event)
@@ -41,11 +41,12 @@ function loadDifficultGame(event) {
 }
 
 function chooseFighter(event) {
-  var fighter = event.target.id  
+  var fighter = event.target.closest('img').id  
   game.player.takeTurn(fighter)
   game.computerFighter()
   game.checkForWinner(game.player.fighter, game.computer.fighter)
   displayFighters(game.player, game.computer)
+  fightSection.removeEventListener('click', chooseFighter)
   setTimeout(resetBoard, 2000)
   show(duringGameHeader) 
 }
@@ -66,7 +67,7 @@ function displayFighters(userChoice, computerChoice) {
 
   for (var i = 0; i < fighterIcons.length; i++) {
     hide(fighterIcons[i])
-  } 
+  }
   show(playerFighter)
   show(computerFighter)  
 }
@@ -101,4 +102,5 @@ function resetBoard() {
     show(fighterIcons[i])
   }
   duringGameHeader.innerText = 'Choose your fighter!'
+  fightSection.addEventListener('click', chooseFighter)
 }
