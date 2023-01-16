@@ -10,12 +10,10 @@ I built a website with the functionality for a user to play against a computer i
 
 A user would open the link to this github repository, then would fork the repositiory. Next they would click the green code, which allows them make a copy of the linked ssh key. The user would then open the terminal to the directory they want to install this, and run git clone (ssh key they copied). From there they would cd into the directory, and then run code . if using vs code to be up and running. 
 
-
 ### Preview of App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
 
-
-
+![Website Gif Rock-Paper-Scissors](https://user-images.githubusercontent.com/116752855/212753929-ab391578-8ccf-4f60-85f1-a2fc2ab10241.gif)
 
 ### Context:
 [//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
