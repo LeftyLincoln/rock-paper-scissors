@@ -3,7 +3,7 @@ class Game {
     this.player = new Player('Human', '🧙‍♂️')
     this.computer = new Player('Computer', '💻')
     this.type = gameType
-    this.fighters = undefined
+    this.fighters 
   }
 
   chooseGame(event) {
