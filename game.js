@@ -36,15 +36,15 @@ class Game {
 
   scoreCounter(whoWon) {
     if (whoWon === 'draw') {
-      duringGameHeader.innerText = 'It was a draw, battle again!'
+      duringGameHeader.innerText = '😕 It was a draw, battle again! 😕'
     } else if (whoWon === 'computer') {
       this.computer.wins += 1
       computerCounter.innerText = `Wins: ${this.computer.wins}`
-      duringGameHeader.innerText =  'The computer won this round!'
+      duringGameHeader.innerText =  '💻 The computer won this round! 💻'
     } else {
       this.player.wins += 1
       userCounter.innerText = `Wins: ${this.player.wins}`
-      duringGameHeader.innerText =  'User won this round!'
+      duringGameHeader.innerText =  '🧙‍♂️ User Magician won this round! 🧙‍♂️'
     }
   }
 
