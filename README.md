@@ -23,7 +23,7 @@ The project was assigned Tuesday midday and is due Tues evening. I had a week to
 ### Contributors:
 [//]: <> (Who worked on this application? Link to their GitHubs.)
 
-https://github.com/LeftyLincoln
+[Travis Parks](https://github.com/LeftyLincoln)
 
 ### Learning Goals:
 [//]: <> (What were the learning goals of this project? What tech did you work with?)
