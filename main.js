@@ -27,7 +27,7 @@ function loadClassicGame(event) {
   show(duringGameHeader) 
   classicFighters()
   show(fightSection)
-  }
+}
   
 function loadDifficultGame(event) {
   game.chooseGame(event)  
