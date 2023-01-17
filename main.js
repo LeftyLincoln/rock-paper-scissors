@@ -47,7 +47,7 @@ function chooseFighter(event) {
   game.checkForWinner(game.player.fighter, game.computer.fighter)
   displayFighters(game.player, game.computer)
   fightSection.removeEventListener('click', chooseFighter)
-  setTimeout(resetBoard, 2000)
+  setTimeout(resetBoard, 3000)
   show(duringGameHeader) 
 }
 
