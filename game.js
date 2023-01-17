@@ -36,7 +36,7 @@ class Game {
 
   scoreCounter(whoWon) {
     if (whoWon === 'draw') {
-      duringGameHeader.innerText = '😕 It\'s a draw! You both made the same choice, let\'s battle again! 😕'
+      duringGameHeader.innerText = '😕 It\'s a draw! You both chose the same fighter, let\'s battle again! 😕'
     } else if (whoWon === 'computer') {
       this.computer.wins += 1
       computerCounter.innerText = `Wins: ${this.computer.wins}`
