@@ -17,8 +17,9 @@ main {
   flex-direction: column;
   justify-content: flex-start;
   width:68vw;
-  height: 100vh
+  height: 100vh;
 }
+
 h1 {
   font-size: 50px;
   text-align: center;
@@ -70,6 +71,11 @@ h3 {
   width: 17vw;
   height: 40%;
   cursor: pointer;
+  border-radius: 10px;
+}
+
+.rules:hover {
+  background-color: #BF40BF;
 }
 
 .rules > p {
@@ -94,6 +100,7 @@ p {
 .change-game-button:hover {
   scale: 1.2;
   box-shadow: 9px 9px 3px darkorchid;
+  background-color: #BF40BF
 }
 
 .counter {
