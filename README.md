@@ -3,7 +3,7 @@
 ### Abstract:
 [//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
 
-I built a website with the functionality for a user to play against a computer in two different games. The first game is the classic rock/paper/scissors, and the second is a more difficult game which adds to more "fighters" to the mix. These added fighters are the lizard, and alien, which add to the complexity of who can win with what. This allows a user to enter the website and play against a totally random computer opponent and allows the user to keep track of the overall score, and who won each game. 
+I built a website with the functionality for a user to play against a computer in two different games. The first game is the classic rock/paper/scissors, and the second is a more difficult game which adds two more "fighters" to the mix. These added fighters are the lizard, and alien, which add to the complexity of who can win with what. This allows a user to enter the website and play against a totally random computer opponent and allows the user to keep track of the overall score, and who won each game. 
 
 ### Installation Instructions:
 [//]: <> (What steps does a person have to take to get your app cloned down and running?)
